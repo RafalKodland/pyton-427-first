@@ -1,0 +1,12 @@
+dict = {
+    "LOL" : "Odpowiedź na coś zabawnego",
+    "CRINGE" : "Coś dziwnego lub wstydliwego"
+}
+
+while True:
+    find = input("Wpisz słowo którego nie rozumiesz>>")
+    find = find.upper()
+    if find in dict.keys():
+        print(dict[find])
+    else:
+        print("Nie znam definicji tego słowa")
