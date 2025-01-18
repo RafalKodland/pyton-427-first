@@ -10,3 +10,5 @@ while True:
         print(dict[find])
     else:
         print("Nie znam definicji tego słowa")
+
+#Testowa zmiana
