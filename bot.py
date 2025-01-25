@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 from pass_gen import generate_password
+import os
+from random import choice
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -26,5 +28,12 @@ async def add(ctx, l1 = 0, l2 = 0):
 @bot.command()
 async def password(ctx, length = 10):
     await ctx.send(f"Wygenerowane hasło: {generate_password(length)}")
+
+@bot.command()
+async def mem(ctx):
+    files = os.listdir("images")
+    with open(f"images\{choice(files)}", "rb") as f:
+        df = discord.File(f)
+    await ctx.send(file=df)
 
 bot.run("")
